@@ -5,6 +5,7 @@
         color:#fff;
         transition: all 1s ease;
         border: 1px solid #8875FF;
+        margin-bottom: 2rem;
     }
     .btn:hover{ 
         background: forestgreen;

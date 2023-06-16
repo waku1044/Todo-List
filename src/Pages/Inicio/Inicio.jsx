@@ -6,10 +6,9 @@ import './style.css'
 const Inicio = ()=>{
         return <>  
         <Header />
-        <main>
-            <Botton titulo='Ingresar' bg='#8875FF'/>
-            <p>No tenes cuenta?</p>
-            <Botton titulo='Registrate'/>
+        <main className='bg-dark'>
+            <Botton titulo='Login' bg='#8875FF'/>
+            <Botton titulo='Create account'/>
         </main>
         </>
 }
