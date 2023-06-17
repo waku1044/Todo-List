@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import Inicio from './Pages/Inicio/Inicio';
 import Login from './Pages/Login/Login.jsx';
+import Register from  './Pages/Register/Index.jsx';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
       <Routes>
           <Route path='/' element={ <Inicio /> }></Route>
           <Route path='/login' element={ <Login /> }></Route>
+          <Route path='/register' element={ <Register /> }></Route>
 
           
 
