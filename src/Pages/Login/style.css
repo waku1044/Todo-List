@@ -1,0 +1,25 @@
+.login{
+    width: 100%;
+    height:100vh;
+}
+h2{
+    font-family: 'Lato';
+    font-size: 2rem;
+}
+label{
+    font-family: 'Lato';
+    color: #fff;
+    font-weight: 400; 
+    letter-spacing: .1rem;
+    font-size: 1.5rem;
+    padding-bottom: 8px;
+}
+input{
+    font-family: 'Lato';
+    background: #1D1D1D;
+    border: .8px solid #979797;
+    padding: 12px;
+    color: #fff;
+    font-weight: 400; 
+    font-size: 1.5rem;
+}

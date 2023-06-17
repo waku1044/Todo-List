@@ -1,5 +1,6 @@
-import Botton from '../../Components/Button';
+
 import Header from '../../Components/Header';
+import { Link } from 'react-router-dom';
 import './style.css'
 
 
@@ -7,8 +8,8 @@ const Inicio = ()=>{
         return <>  
         <Header />
         <main className='bg-dark'>
-            <Botton titulo='Login' bg='#8875FF'/>
-            <Botton titulo='Create account'/>
+        <Link to='/login' className='btn btn-success w-50 mb-3'>Login</Link>
+        <Link to='/register' className='btn btn-outline-primary w-50 mb-3'>Create account</Link> 
         </main>
         </>
 }
