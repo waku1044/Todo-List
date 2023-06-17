@@ -1,7 +1,7 @@
 import ImgPrevent from '../../assets/Img/bottonPrevent.svg';
 
-const BottonPrevent = ()=>{
-        return <img src={ImgPrevent} alt="Prevent" className='m-5' />
+const BottonPrevent = (destino)=>{
+        return <img src={ImgPrevent} alt="Prevent" onClick={destino} className='m-5' />
 }
 
 export default BottonPrevent;
