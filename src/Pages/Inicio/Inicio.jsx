@@ -10,7 +10,7 @@ const Inicio = ()=>{
         <Header />
         <main className='bg-dark d-flex flex-column'>
         <BtnLink to='/login' className='btn' width='75%'>Login</BtnLink>
-        <BtnLink to='/register' className='btn' width='75%' border='forestgreen' bg='transparent'>Create account</BtnLink> 
+        <BtnLink to='/register' className='btn my-3' width='75%' border='forestgreen' bg='transparent'>Create account</BtnLink> 
         </main>
         </>
 }
