@@ -9,11 +9,14 @@
     height: 100px;
 }
 .imgAgregar{
-    position: relative;
-    top: -25px;
-    left: 45%;
-    width: 4rem;
+    width: 3.5rem;
+    height: 3.5rem;
     background: #8687E7;
     border-radius: 50%;
+    position: relative;
+    top: -25px;
     box-shadow: 0px 0px 15px #fff;
+}
+.imgbar{
+    width: 2rem;
 }
