@@ -1,6 +1,7 @@
 import './style.css';
-import Button from '../../Components/Button';
+import { BtnLink } from '../../Components/BtnLink';
 import { Link } from 'react-router-dom';
+// import closeEye from '../../assets/Img/closeEye.svg';
 import imgPrevent from '../../assets/Img/bottonPrevent.svg'
 
 
@@ -20,7 +21,7 @@ const Login = ()=>{
             <label htmlFor="usepassword" className='text-white'>Repeat Password</label>
             <input type="password" name='userpassword' placeholder='Repeat Password' className='mb-5 '/>
 
-            <Button bg='#8687E7' titulo='Login' margin='0 auto' />
+            <BtnLink bg='#8687E7' width='75%' className='btn mx-auto'>Login</BtnLink>
         </form>
     </div>
 }

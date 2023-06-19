@@ -1,0 +1,19 @@
+.home{
+    height: calc(100vh - 77.5px);
+}
+.tasks{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #363636;
+    height: 100px;
+}
+.imgAgregar{
+    position: relative;
+    top: -25px;
+    left: 45%;
+    width: 4rem;
+    background: #8687E7;
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px #fff;
+}
