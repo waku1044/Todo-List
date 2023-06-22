@@ -10,52 +10,75 @@ const InitialValues = {
 }
 const Login = ()=>{
     const [state, setState] = useState({InitialValues});
+    const [error, setError] = useState({});
     const navegate = useNavigate();
 
+    console.log(localStorage.getItem('user'),localStorage.getItem('password'))
+
     const handleChange = (e)=>{
-        e.preventDefault(); 
-        setState({...state,[e.target.name]: e.target.value})
-       
-        
+            setState({...state,[e.target.name]: e.target.value})       
     }
+    
     const validar = ()=>{
+        let errorList = {};
+        let userRegis = localStorage.getItem('user');
+        let passRegis = localStorage.getItem('password');
+        if(!state.userName)
+            errorList = {...errorList, user:'Campo obligatorio.'}
+                else if(state.userName !== userRegis)
+                    errorList = {...errorList, user:'1 Usuario y Contraseña no registrado.'}
+        if(!state.password)
+            errorList = {...errorList, password:'Campo obligatorio'}
+                else if(state.password !== passRegis)
+                    errorList = {...errorList, password:'2 Usuario y Contraseña no registrado.' }
+        return errorList;
+
+
         
-        console.log(state);
-        console.log(localStorage.getItem('user'));
-        console.log(localStorage.getItem('password'));
-        (state.userName != '' && state.password != '')?navegate('/home'): null;
+    }
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        let errores = validar();
+        if(Object.keys(errores).length < 1){
+            navegate('/home');
+        }
+        setError(errores);
+
     }
 
 
-
-    return <div className="login bg-dark ">
-        <Link to='/' ><img src={imgPrevent} alt="" className='mb-5' /></Link>
+    return <div className="login bg-dark pt-5">
+        <Link to='/' ><img src={imgPrevent} alt="" className='ms-4 mb-4' /></Link>
         <h2 className='text-white ms-5 mt-5'>Login</h2>
-        <form action="" className='mt-5 d-flex flex-column justify-content-around gap-1 w-75 mx-auto' onSubmit={validar}>
-            <label htmlFor="username" className='text-white'>Username</label>
-            <input 
-            type="text" 
-            name='userName'
-            placeholder='Enter your Username' 
-            className='mb-5'
-            value={state.userName}
-            onChange={handleChange}
-            required
-            
-            
-            />
+        <form action="" className='mt-5 d-flex flex-column justify-content-around gap-1 w-75 mx-auto' onSubmit={handleSubmit}>
+            <div>
+                <label htmlFor="username" className='text-white'>Usuario</label>
+                <input 
+                type="text" 
+                name='userName'
+                placeholder='Enter your Username' 
+                className=''
+                value={state.userName}
+                onChange={handleChange}
+                required
+                />
+                {error.name && <p className='errorText'>{error.name}</p>}
+            </div>
 
-            <label htmlFor="usepassword" className='text-white'>Password</label>
-            <input type="password"
-             name='password' 
-             placeholder='Enter your Password' 
-             className='mb-5 '
-             value={state.password}
-             onChange={handleChange}
-             required
-             />
+            <div>
+                <label htmlFor="usepassword" className='text-white'>Password</label>
+                <input type="password"
+                name='password' 
+                placeholder='Enter your Password' 
+                className='mb-5 '
+                value={state.password}
+                onChange={handleChange}
+                required
+                />
+            {error.password && <p className='errorText'>{error.password}</p>}
+            </div>
 
-            <button type='submit' className='btn mx-auto w-75'>Login</button >
+            <button type='submit' className='btn mx-auto w-75'>Ingresar</button >
         </form>
     </div>
 }
