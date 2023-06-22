@@ -1,22 +1,3 @@
 .home{
-    height: calc(100vh - 77.5px);
-}
-.tasks{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: #363636;
-    height: 100px;
-}
-.imgAgregar{
-    width: 3.5rem;
-    height: 3.5rem;
-    background: #8687E7;
-    border-radius: 50%;
-    position: relative;
-    top: -25px;
-    box-shadow: 0px 0px 15px #fff;
-}
-.imgbar{
-    width: 2rem;
+    height: calc(99vh - 77.5px);
 }
