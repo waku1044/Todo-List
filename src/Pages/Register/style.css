@@ -18,7 +18,7 @@ input{
     font-family: 'Lato';
     background: #1D1D1D;
     border: .8px solid #979797;
-    padding: 12px;
+    /* padding: 12px; */
     color: #fff;
     font-weight: 400; 
     font-size: 1.5rem;
@@ -26,4 +26,8 @@ input{
 .imgeye{
     display: inline-block;
     width: 1.3rem;
+}
+.errorText{
+    display: inline-block;
+    color: #f00;
 }
