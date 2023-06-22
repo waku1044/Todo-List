@@ -24,17 +24,15 @@ const Login = ()=>{
         let userRegis = localStorage.getItem('user');
         let passRegis = localStorage.getItem('password');
         if(!state.userName)
-            errorList = {...errorList, user:'Campo obligatorio.'}
-                else if(state.userName !== userRegis)
-                    errorList = {...errorList, user:'1 Usuario y Contraseña no registrado.'}
+        errorList = {...errorList, user:'Campo obligatorio.'}
+        else if(state.userName !== userRegis)
+        errorList = {...errorList, user:'Usuario o Contraseña no registrado.'}
         if(!state.password)
-            errorList = {...errorList, password:'Campo obligatorio'}
-                else if(state.password !== passRegis)
-                    errorList = {...errorList, password:'2 Usuario y Contraseña no registrado.' }
-        return errorList;
-
-
+        errorList = {...errorList, password:'Campo obligatorio'}
+        else if(state.password !== passRegis)
+        errorList = {...errorList, password:'Usuario o Contraseña no registrado.' }
         
+        return errorList;        
     }
     const handleSubmit = (e)=>{
         e.preventDefault();
@@ -60,9 +58,9 @@ const Login = ()=>{
                 className=''
                 value={state.userName}
                 onChange={handleChange}
-                required
+                
                 />
-                {error.name && <p className='errorText'>{error.name}</p>}
+                {error.user && <p className='errorText'>{error.user}</p>}
             </div>
 
             <div>
@@ -70,10 +68,10 @@ const Login = ()=>{
                 <input type="password"
                 name='password' 
                 placeholder='Enter your Password' 
-                className='mb-5 '
+                className=''
                 value={state.password}
                 onChange={handleChange}
-                required
+                
                 />
             {error.password && <p className='errorText'>{error.password}</p>}
             </div>
