@@ -6,6 +6,7 @@ import Inicio from './Pages/Inicio/Inicio';
 import Login from './Pages/Login/Login.jsx';
 import Register from  './Pages/Register/Index.jsx';
 import Home from './Pages/Home/Home.jsx';
+import Takes from './Pages/takes/index.jsx';  
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           <Route path='/login' element={ <Login /> }></Route>
           <Route path='/register' element={ <Register /> }></Route>
           <Route path='/home' element={ <Home /> }></Route>
+          <Route path='/takes' element={ <Takes /> }></Route>
 
           
 
