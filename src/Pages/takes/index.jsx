@@ -1,15 +1,29 @@
 import HeaderHome from "../../Components/HeaderHome"; 
 // import './style.css';
-import FooterNavBar from "../../Components/FooterNavbar";
+import {v4 as uuidv4} from 'uuid';
+import FooterNavBar from "../../Components/FooterNavbar"; 
+import { useState } from 'react';
 
 
+const inicialValues = {
+
+    id:'',
+    titule:'',
+    description:'',
+    day:'',
+    time:''
+}
+const myid = uuidv4();
 
 const Home = ()=>{
+
+    const { state, setState } = useState(inicialValues);
+
 
         return <>
                 <HeaderHome />
                 <div className="home bg-dark d-flex flex-column align-items-center pt-3">
-                        <form action="" className="row w-75">
+                        <form action="" onSubmit={handleDate} className="row w-75">
                             <div className="col-12">
                                 <label htmlFor="">Title</label>
                                 <input type="text" className="fs-1 bg-secondary" />
