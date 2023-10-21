@@ -1,27 +1,22 @@
-import imgAgregar from '../../assets/Img/imgAgregar.svg';
-import imgIndex from '../../assets/Img/imgIndex.svg';
-import imgUserBar from '../../assets/Img/imguserbar.svg';
-import { useNavigate } from 'react-router-dom';
-import './style.css';
+import imgAgregar from "../../assets/Img/imgAgregar.svg";
+import imgIndex from "../../assets/Img/imgIndex.svg";
+import imgUserBar from "../../assets/Img/imguserbar.svg";
+import { Link } from "react-router-dom";
+import "./style.css";
 
-const FooterNavBar = ()=>{
-
-    const navegate = useNavigate()
-    const  pageTaks = ()=>{
-       navegate('../takes');
-    }
-   
-    return <div className="tasks d-flex justify-content-around px-3">
-    <img src={imgIndex} alt="index" className='imgbar'  />
-    <img src={imgAgregar} 
-    alt="AgregarTarea" 
-    className='imgAgregar'
-    onClick={pageTaks}
-    />
-    <img src={imgUserBar} alt="user" className='imgbar' />
-</div>
-
-}
+const FooterNavBar = () => {
+  return (
+    <div className="tasks d-flex justify-content-around align-items-center px-3">
+      <Link to="/home">
+        <img src={imgIndex} className="imgbar" alt="index" />
+      </Link>
+      <Link to="/takes">
+        <img src={imgAgregar} alt="AgregarTarea" className="imgAgregar" />
+      </Link>
+      <Link to="/">
+        <img src={imgUserBar} className="imgbar" alt="user" />
+      </Link>
+    </div>
+  );
+};
 export default FooterNavBar;
-
-

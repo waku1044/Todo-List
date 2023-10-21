@@ -1,6 +1,6 @@
 main{
-    height: calc(100vh - 136px);
-    /* background: #000; */
+    height: calc(100vh - 136px); 
+    background: #000; 
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -9,4 +9,9 @@ main{
 }
 p{
     color: #fff;
+}
+@media screen and (min-width: 488px){
+    main{
+        height:calc(100vh - 100px);
+    }
 }
