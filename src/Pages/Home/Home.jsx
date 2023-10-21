@@ -1,24 +1,35 @@
-import HeaderHome from "../../Components/HeaderHome"; 
-import './style.css';
-import imgPrin from '../../assets/Img/imghomeprin.svg';
+// Home.js
+// import React, { useState, useEffect } from "react";
+import HeaderHome from "../../Components/HeaderHome";
+import "./style.css";
+import imgPrin from "../../assets/Img/imghomeprin.svg";
 import FooterNavBar from "../../Components/FooterNavbar";
+import CardTarea from "../../Components/tarea";
+import { useTareas } from "../../Components/ContextTeareas";
+// import { useLocation } from "react-router-dom";
 
+const Home = () => {
+  const { tareas } = useTareas();
+  return (
+    <>
+      <div className="home bg-dark text-center">
+        <HeaderHome />
+        <h6 className="text-white">Lista de Tareas</h6>
 
+        {/* // Luego, puedes mapear las tareas y mostrarlas en tu componente */}
+        {tareas.length > 0 ? (
+          tareas.map((dato, index) => <CardTarea key={index} datos={dato} />)
+        ) : (
+          // Muestra la imagen y los párrafos si no hay tareas
+          <div>
+            <img src={imgPrin} className="img-fluid" alt="foto" />
+          </div>
+        )}
 
-const Home = ()=>{
+        <FooterNavBar />
+      </div>
+    </>
+  );
+};
 
-        return <>
-                <HeaderHome />
-                <div className="home bg-dark d-flex flex-column align-items-center ">
-                        <picture className="mt-5">
-                                <img src={imgPrin} className="mt-5" alt="imgPrincipal" />
-                        </picture>
-                        <p className="text-white">What do you want to do today?</p>
-                        <p className="text-white">Tap + to add your tasks</p>
-                </div>
-                        <FooterNavBar />
-                </>
-        
-    
-}
 export default Home;
