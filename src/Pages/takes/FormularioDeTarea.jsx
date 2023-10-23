@@ -35,7 +35,7 @@ const Takes = () => {
   return (
     <>
       <HeaderHome />
-      <div className="takes pt-3 mb-4 align-items-center">
+      <div className="takes pt-3 align-items-center">
         <form action="" onSubmit={handleDate} className="form w-75 mx-auto">
           <div className="col-12 ">
             <label htmlFor="titulo">Titulo</label>

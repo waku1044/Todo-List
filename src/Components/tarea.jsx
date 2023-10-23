@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 const tarea = ({datos})=>{
 
  
-    return <div className=" bg-secondary w-75 mx-auto py-3 rounded my-3">
+    return <div className=" bg-secondary w-75 mx-auto p-3 rounded my-3">
     <div className="mb-0 pb-0">
       <p>Pendiente</p>
       <p>ID: <b>{datos.id}</b></p>
