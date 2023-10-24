@@ -8,6 +8,7 @@ import Register from  './Pages/Register/Index.jsx';
 import Home from './Pages/Home/Home.jsx';
 import Takes from './Pages/takes/FormularioDeTarea.jsx';
 import Page404 from './Pages/Page404.jsx';
+import Edit from './Pages/Edit/index.jsx';
 import { TareasProvider } from './Components/ContextTeareas';
 
 
@@ -22,6 +23,7 @@ function App() {
           <Route path='/register' element={ <Register /> } exact></Route>
           <Route path='/home' element={ <Home /> } exact></Route>
           <Route path='/takes' element={ <Takes /> } exact></Route>
+          <Route path='/edit' element={ <Edit /> } exact></Route>
           <Route path='*' element={<Page404/>} exact></Route>
       </Routes>
           </TareasProvider>

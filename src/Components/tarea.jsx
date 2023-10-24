@@ -1,11 +1,13 @@
 import {Link} from "react-router-dom";
-
+import { useTareas } from "./ContextTeareas";
 
 
 const tarea = ({datos})=>{
 
+  const {  eliminarTarea } = useTareas();
+
  
-    return <div className=" bg-secondary w-75 mx-auto p-3 rounded my-3">
+    return <div className=" bg-secondary mx-auto p-3 rounded my-3 " style={{width:'150px;' }}>
     <div className="mb-0 pb-0">
       <p>Pendiente</p>
       <p>ID: <b>{datos.id}</b></p>
@@ -16,8 +18,8 @@ const tarea = ({datos})=>{
       <p className="card-text">Día: <b>{datos.day}</b></p>
       <p className="card-text">Hora: <b>{datos.time}</b></p>
       <div className="card-footer d-flex justify-content-around">
-      <Link to="/Edit" className="btn btn-primary">Editar</Link>
-      <button className="btn-danger btn ">Eliminar</button>
+      <Link to={`/edit?id=${datos.id}`} className="btn btn-primary">Editar</Link>
+      <button className="btn-danger btn " onClick={() => eliminarTarea(datos.id)} >Eliminar</button>
 
       </div>
     </div>

@@ -6,7 +6,6 @@ import imgPrin from "../../assets/Img/imghomeprin.svg";
 import FooterNavBar from "../../Components/FooterNavbar";
 import CardTarea from "../../Components/tarea";
 import { useTareas } from "../../Components/ContextTeareas";
-// import { useLocation } from "react-router-dom";
 
 const Home = () => {
   const { tareas } = useTareas();
@@ -14,10 +13,10 @@ const Home = () => {
     <>
         <HeaderHome />
       <div className="home bg-dark text-center ">
-        <h6 className="text-white">Lista de Tareas</h6>
+        <h6 className="text-warning h2">Lista de Tareas</h6>
 
         {/* // Luego, puedes mapear las tareas y mostrarlas en tu componente */}
-        <div className="p-3 d-flex flex-wrap overflow-auto">
+        <div className=" d-flex flex-wrap gap-3 overflow-auto">
           {tareas.length > 0 ? (
             tareas.map((dato, index) => <CardTarea key={index} datos={dato}  />)
           ) : (
