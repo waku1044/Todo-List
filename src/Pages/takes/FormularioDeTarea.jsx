@@ -2,7 +2,7 @@ import HeaderHome from "../../Components/HeaderHome";
 import "./takes.css";
 import FooterNavBar from "../../Components/FooterNavbar";
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { useTareas } from "../../Components/ContextTeareas";
 
 const inicialValues = {

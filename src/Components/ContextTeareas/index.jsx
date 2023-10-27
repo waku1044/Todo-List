@@ -6,8 +6,8 @@ const TareasContext = createContext();
 export const TareasProvider = ({ children }) => {
   const [tareas, setTareas] = useState([]);
 
-  const agregarTarea = (tarea) => {
-    setTareas([...tareas, tarea]);
+  const agregarTarea = (data) => {
+    setTareas([...tareas, data]);
   };
 
   const eliminarTarea = (id) => {
@@ -17,7 +17,7 @@ export const TareasProvider = ({ children }) => {
   const editarTarea = (id, nuevosDatos) => {
     setTareas(
       tareas.map((tarea) => {
-        if (tarea.id === id) {
+        if (tarea.id == id) {
           return { ...tarea, ...nuevosDatos };
         }
         return tarea;

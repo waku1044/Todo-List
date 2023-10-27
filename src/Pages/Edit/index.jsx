@@ -2,36 +2,33 @@ import HeaderHome from "../../Components/HeaderHome";
 // import "./takes.css";
 import FooterNavBar from "../../Components/FooterNavbar";
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 import { useTareas } from "../../Components/ContextTeareas";
 
-const inicialValues = {
-  titulo: "",
-  description: "",
-  day: "",
-  time: "",
-  id: "",
-};
+
 
 const Edit = () => {
-  const { agregarTarea } = useTareas();
-  const [state, setState] = useState(inicialValues);
+  const navigator = useNavigate();
+  const { editarTarea, tareas } = useTareas();
+  const location = useLocation();
+  const taskId = new URLSearchParams(location.search).get("id");
   
-   const navigator = useNavigate();
+  
+  const [state, setState] = useState({ ...tareas.find((task) => (task.id == taskId) ? task:null) }); 
+  
+  
   
   const handleChange = (e) => {
-    // e.preventDefault();
     setState({ ...state, [e.target.name]: e.target.value });
-    // setState({...state,[state.id]:myid})
-    // console.log(state)
   };
+  
   const handleDate = (e) => {
     e.preventDefault();
-    const tarea = { ...state, id: Date.now() };
-    // Accede al contexto y usa la función para agregar la tarea
-    agregarTarea(tarea);
+    editarTarea(taskId, state);
+    console.log(state)
     navigator("/home");
   };
+  console.log(state);
   return (
     <>
       <HeaderHome title= 'Editar'/>
