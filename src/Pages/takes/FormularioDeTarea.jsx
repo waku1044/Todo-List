@@ -35,7 +35,7 @@ const Takes = () => {
   return (
     <>
       <HeaderHome />
-      <div className="takes pt-3 align-items-center">
+      <div className="takes py-5 align-items-center overflow-auto">
         <form action="" onSubmit={handleDate} className="form w-75 mx-auto">
           <div className="col-12 ">
             <label htmlFor="titulo">Titulo</label>
@@ -81,8 +81,8 @@ const Takes = () => {
               required
             />
           </div>
-          <div className="mt-2">
-            <button type="submit" className="btn btn-primary col-12">
+          <div className="mt-2 self-center">
+            <button type="submit" className="btn btn-primary col-12 ">
               Guardar
             </button>
           </div>
